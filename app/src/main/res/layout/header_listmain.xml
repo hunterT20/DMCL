@@ -1,6 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/txtvTinKhuyenMai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:text="Tin Khuyến Mãi"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtvMuaTraGop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:text="Mua Trả Góp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtvTheThanhVien"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:text="Thẻ Thành Viên"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout2"
+        android:layout_marginBottom="8dp">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="210dp"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <me.relex.circleindicator.CircleIndicator
+            android:id="@+id/indicator"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_alignBottom="@id/viewPager"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="8dp" />
+
+    </RelativeLayout>
+
+    <TableLayout
+        android:id="@+id/tableLayout2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="17dp"
+        android:layout_weight="1"
+        android:stretchColumns="*"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/btnHeaderTV"
+                style="@style/button_index"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tivi" />
+
+            <Button
+                android:id="@+id/btnHeaderTuLanh"
+                style="@style/button_index"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tủ lạnh" />
+
+            <Button
+                android:id="@+id/btnHeaderMayLanh"
+                style="@style/button_index"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Máy lạnh" />
+
+            <Button
+                android:id="@+id/btnHeaderMayGiat"
+                style="@style/button_index"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Máy giặt" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/btnHeaderGiaDung"
+                style="@style/button_index"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gia dụng" />
+
+            <Button
+                android:id="@+id/btnHeaderDienThoai"
+                style="@style/button_index"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Điện thoại" />
+
+            <Button
+                android:id="@+id/btnHeaderNoiThat"
+                style="@style/button_index"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nội thất" />
+
+            <Button
+                android:id="@+id/btnHeaderXemThem"
+                style="@style/button_index"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Xem thêm" />
+        </TableRow>
+
+    </TableLayout>
 
 </android.support.constraint.ConstraintLayout>

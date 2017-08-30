@@ -2,15 +2,16 @@ package com.hunterit.dmcl.model;
 
 import java.util.List;
 
-/**
- * Created by Nusib on 8/29/2017.
- */
-
 public class ItemIndex {
     private String title;
+    private List<Product> productList;
 
-    public ItemIndex(String title) {
+    public ItemIndex(String title, List<Product> productList) {
         this.title = title;
+        this.productList = productList;
+    }
+
+    public ItemIndex() {
     }
 
     public String getTitle() {
@@ -19,5 +20,13 @@ public class ItemIndex {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public List<Product> getProductList() {
+        return productList;
+    }
+
+    public void setProductList(List<Product> productList) {
+        this.productList = productList;
     }
 }

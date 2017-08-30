@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.app.Fragment;
 import android.os.Handler;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 
 import com.hunterit.dmcl.R;
 import com.hunterit.dmcl.model.ItemIndex;
+import com.hunterit.dmcl.model.Product;
 import com.hunterit.dmcl.view.adapter.IndexAdapter;
 import com.hunterit.dmcl.view.adapter.SliderMainAdapter;
 
@@ -24,6 +26,8 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import me.relex.circleindicator.CircleIndicator;
+
+import static android.content.ContentValues.TAG;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -74,15 +78,25 @@ public class IndexFragment extends Fragment {
         lvIndex = view.findViewById(R.id.lvIndex);
         lvIndex.addHeaderView(headerView,null,false);
 
+        List<Product> productList = new ArrayList<>();
+        Product product = new Product("Tivi sony",36000000,3400000);
+        Product product1 = new Product("Tivi sony1",36000000,3400000);
+        Product product2 = new Product("Tivi sony2",36000000,3400000);
+        Product product3 = new Product("Tivi sony3",36000000,3400000);
+        productList.add(product);
+        productList.add(product1);
+        productList.add(product2);
+        productList.add(product3);
+
         List<ItemIndex> list = new ArrayList<>();
-        ItemIndex itemIndex1 = new ItemIndex("Khuyến mãi");
-        ItemIndex itemIndex2 = new ItemIndex("Điện tử");
-        ItemIndex itemIndex3 = new ItemIndex("Điện lạnh");
-        ItemIndex itemIndex4 = new ItemIndex("Di động - Tablet");
-        ItemIndex itemIndex5 = new ItemIndex("Gia dụng");
-        ItemIndex itemIndex6 = new ItemIndex("Viễn thông - Laptop");
-        ItemIndex itemIndex7 = new ItemIndex("Nội thất");
-        ItemIndex itemIndex8 = new ItemIndex("Đối tác - Dịch vụ");
+        ItemIndex itemIndex1 = new ItemIndex("Khuyến mãi",productList);
+        ItemIndex itemIndex2 = new ItemIndex("Điện tử",productList);
+        ItemIndex itemIndex3 = new ItemIndex("Điện lạnh",productList);
+        ItemIndex itemIndex4 = new ItemIndex("Di động - Tablet",productList);
+        ItemIndex itemIndex5 = new ItemIndex("Gia dụng",productList);
+        ItemIndex itemIndex6 = new ItemIndex("Viễn thông - Laptop",productList);
+        ItemIndex itemIndex7 = new ItemIndex("Nội thất",productList);
+        ItemIndex itemIndex8 = new ItemIndex("Đối tác - Dịch vụ",productList);
 
         list.add(itemIndex1);
         list.add(itemIndex2);

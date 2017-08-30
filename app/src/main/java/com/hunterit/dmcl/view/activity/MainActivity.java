@@ -1,5 +1,6 @@
 package com.hunterit.dmcl.view.activity;
 
+import android.app.Fragment;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -11,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.hunterit.dmcl.R;
+import com.hunterit.dmcl.view.fragment.IndexFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -30,6 +32,8 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        callFragment(new IndexFragment());
     }
 
     @Override
@@ -67,5 +71,12 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void callFragment(Fragment fragment) {
+        getFragmentManager()
+                .beginTransaction()
+                .replace(R.id.frmContent, fragment)
+                .commit();
     }
 }

@@ -1,6 +1,7 @@
 package com.hunterit.dmcl.view.adapter;
 
 import android.content.Context;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 
 import com.hunterit.dmcl.R;
 import com.hunterit.dmcl.model.ItemIndex;
+import com.hunterit.dmcl.util.RecyclerViewHorizontalUtil;
 
 import java.util.List;
 
@@ -45,17 +47,25 @@ public class IndexAdapter extends BaseAdapter {
             view = layout.inflate(R.layout.item_listmain, null);
             holder = new ViewHolder();
             holder.txtvTitleTang = view.findViewById(R.id.txtvTitleTang);
+            holder.rcvProductIndex = view.findViewById(R.id.rcvProductIndex);
             view.setTag(holder);
         } else {
             holder = (ViewHolder) view.getTag();
         }
         ItemIndex itemIndex = itemList.get(i);
+        RecyclerViewHorizontalUtil.setupRecyclerView(
+                holder.rcvProductIndex,
+                new ItemProductAdapter(itemIndex.getProductList(), context),context
+        );
 
         holder.txtvTitleTang.setText(itemIndex.getTitle());
+        ItemProductAdapter adapter = new ItemProductAdapter(itemIndex.getProductList(), context);
+        holder.rcvProductIndex.setAdapter(adapter);
         return view;
     }
 
     private static class ViewHolder {
         TextView txtvTitleTang;
+        RecyclerView rcvProductIndex;
     }
 }

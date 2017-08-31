@@ -65,6 +65,9 @@ public class IndexFragment extends Fragment {
         View headerView = ((LayoutInflater) getActivity()
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE))
                 .inflate(R.layout.header_listmain, null, false);
+        View footerView = ((LayoutInflater) getActivity()
+                .getSystemService(Context.LAYOUT_INFLATER_SERVICE))
+                .inflate(R.layout.footer_listmain, null, false);
         viewPager = headerView.findViewById(R.id.viewPager);
         txtvTinKhuyenMai = headerView.findViewById(R.id.txtvTinKhuyenMai);
         txtvMuaTraGop = headerView.findViewById(R.id.txtvMuaTraGop);
@@ -77,6 +80,7 @@ public class IndexFragment extends Fragment {
 
         lvIndex = view.findViewById(R.id.lvIndex);
         lvIndex.addHeaderView(headerView,null,false);
+        lvIndex.addFooterView(footerView,null,false);
 
         List<Product> productList = new ArrayList<>();
         Product product = new Product("Tivi sony",36000000,3400000);

@@ -5,10 +5,12 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 
 import com.hunterit.dmcl.R;
 import com.hunterit.dmcl.view.fragment.IndexFragment;
+import com.hunterit.dmcl.view.fragment.LoginFragment;
 
 public class ContentMain extends AppCompatActivity {
 
@@ -31,7 +33,7 @@ public class ContentMain extends AppCompatActivity {
 
                     return true;
                 case R.id.navigation_taikhoan:
-
+                    callFragment(new LoginFragment(),"Đăng nhập");
                     return true;
             }
             return false;
@@ -51,7 +53,7 @@ public class ContentMain extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        callFragment(new IndexFragment(),"Trang chủ");
+        callFragment(new LoginFragment(),"Trang chủ");
     }
 
     public void callFragment(Fragment fragment, String title) {

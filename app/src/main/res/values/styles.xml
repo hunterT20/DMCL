@@ -17,6 +17,20 @@
         <item name="android:textAllCaps">false</item>
     </style>
 
+    <style name="button_dangky" parent="@style/Widget.AppCompat.Button.Colored">
+        <item name="android:textColor">#fff</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">#04A008</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="button_dangnhap" parent="@style/Widget.AppCompat.Button.Colored">
+        <item name="android:textColor">#fff</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">#0054A6</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

@@ -13,6 +13,7 @@ import android.view.MenuItem;
 
 import com.hunterit.dmcl.R;
 import com.hunterit.dmcl.view.fragment.IndexFragment;
+import com.hunterit.dmcl.view.fragment.LoginFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        callFragment(new IndexFragment());
+        callFragment(new LoginFragment());
     }
 
     @Override

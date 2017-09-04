@@ -9,7 +9,7 @@
     <include
         android:id="@+id/header"
         layout="@layout/header_main"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -61,28 +61,28 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <Button
+            <TextView
                 android:id="@+id/btnHeaderTV"
                 style="@style/button_index"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Tivi" />
 
-            <Button
+            <TextView
                 android:id="@+id/btnHeaderTuLanh"
                 style="@style/button_index"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Tủ lạnh" />
 
-            <Button
+            <TextView
                 android:id="@+id/btnHeaderMayLanh"
                 style="@style/button_index"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Máy lạnh" />
 
-            <Button
+            <TextView
                 android:id="@+id/btnHeaderMayGiat"
                 style="@style/button_index"
                 android:layout_width="wrap_content"
@@ -94,28 +94,28 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <Button
+            <TextView
                 android:id="@+id/btnHeaderGiaDung"
                 style="@style/button_index"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Gia dụng" />
 
-            <Button
+            <TextView
                 android:id="@+id/btnHeaderDienThoai"
                 style="@style/button_index"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Điện thoại" />
 
-            <Button
+            <TextView
                 android:id="@+id/btnHeaderNoiThat"
                 style="@style/button_index"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Nội thất" />
 
-            <Button
+            <TextView
                 android:id="@+id/btnHeaderXemThem"
                 style="@style/button_index"
                 android:layout_width="wrap_content"

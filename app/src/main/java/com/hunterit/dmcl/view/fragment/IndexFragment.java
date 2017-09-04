@@ -65,9 +65,6 @@ public class IndexFragment extends Fragment {
         View headerView = ((LayoutInflater) getActivity()
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE))
                 .inflate(R.layout.header_listmain, null, false);
-        View footerView = ((LayoutInflater) getActivity()
-                .getSystemService(Context.LAYOUT_INFLATER_SERVICE))
-                .inflate(R.layout.footer_listmain, null, false);
         viewPager = headerView.findViewById(R.id.viewPager);
         txtvTinKhuyenMai = headerView.findViewById(R.id.txtvTinKhuyenMai);
         txtvMuaTraGop = headerView.findViewById(R.id.txtvMuaTraGop);
@@ -80,13 +77,12 @@ public class IndexFragment extends Fragment {
 
         lvIndex = view.findViewById(R.id.lvIndex);
         lvIndex.addHeaderView(headerView,null,false);
-        lvIndex.addFooterView(footerView,null,false);
 
         List<Product> productList = new ArrayList<>();
-        Product product = new Product("Tivi sony",36000000,3400000);
-        Product product1 = new Product("Tivi sony1",36000000,3400000);
-        Product product2 = new Product("Tivi sony2",36000000,3400000);
-        Product product3 = new Product("Tivi sony3",36000000,3400000);
+        Product product = new Product("Smart Tivi LED SAMSUNG 43 Inch UA43K5300AKXXV",36000000,3400000);
+        Product product1 = new Product("Smart Tivi LED SAMSUNG 43 Inch UA43K5300AKXXV",36000000,3400000);
+        Product product2 = new Product("Smart Tivi LED SAMSUNG 43 Inch UA43K5300AKXXV",36000000,3400000);
+        Product product3 = new Product("Smart Tivi LED SAMSUNG 43 Inch UA43K5300AKXXV",36000000,3400000);
         productList.add(product);
         productList.add(product1);
         productList.add(product2);

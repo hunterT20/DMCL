@@ -2,14 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_chinhanh"
-        android:icon="@drawable/ic_near_me_black_24dp"
-        android:title="@string/chi_nhanh" />
-
-    <item
         android:id="@+id/navigation_sanpham"
         android:icon="@drawable/ic_dashboard_black_24dp"
         android:title="@string/san_pham" />
+
+    <item
+        android:id="@+id/navigation_chinhanh"
+        android:icon="@drawable/ic_near_me_black_24dp"
+        android:title="@string/chi_nhanh" />
 
     <item
         android:id="@+id/navigation_goi"

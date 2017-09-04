@@ -1,6 +1,8 @@
 package com.hunterit.dmcl.view.activity;
 
-import android.app.Fragment;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -34,7 +36,9 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        callFragment(new LoginFragment());
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        callFragment(new IndexFragment());
     }
 
     @Override
@@ -75,9 +79,36 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void callFragment(Fragment fragment) {
-        getFragmentManager()
+        getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.frmContent, fragment)
                 .commit();
     }
+
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.navigation_chinhanh:
+
+                    return true;
+                case R.id.navigation_giohang:
+
+                    return true;
+                case R.id.navigation_goi:
+
+                    return true;
+                case R.id.navigation_sanpham:
+                    callFragment(new IndexFragment());
+                    return true;
+                case R.id.navigation_taikhoan:
+                    callFragment(new LoginFragment());
+                    return true;
+            }
+            return false;
+        }
+
+    };
 }

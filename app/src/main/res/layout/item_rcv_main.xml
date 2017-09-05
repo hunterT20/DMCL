@@ -4,21 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="177dp"
     android:layout_height="wrap_content"
-    android:background="@drawable/border_view"
     android:orientation="vertical"
     app:cardElevation="0dp">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/border_right_item">
 
         <LinearLayout
             android:id="@+id/linearLayout5"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="0dp"
-            android:layout_marginRight="0dp"
-            android:layout_marginTop="0dp"
             android:background="@drawable/border_view"
             android:orientation="vertical"
             app:layout_constraintHorizontal_bias="0.0"
@@ -61,7 +58,6 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="0dp"
             android:text="32.000.000đ"
             android:textColor="@android:color/holo_red_light"
             android:textSize="16sp"

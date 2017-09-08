@@ -67,9 +67,6 @@ public class IndexFragment extends Fragment {
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE))
                 .inflate(R.layout.header_listmain, null, false);
         viewPager = headerView.findViewById(R.id.viewPager);
-        txtvTinKhuyenMai = headerView.findViewById(R.id.txtvTinKhuyenMai);
-        txtvMuaTraGop = headerView.findViewById(R.id.txtvMuaTraGop);
-        txtvTheThanhVien = headerView.findViewById(R.id.txtvTheThanhVien);
         circleIndicator = headerView.findViewById(R.id.indicator);
         sliderMainAdapter = new SliderMainAdapter(img,getActivity());
 

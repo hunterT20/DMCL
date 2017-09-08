@@ -2,6 +2,7 @@ package com.hunterit.dmcl.view.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import com.hunterit.dmcl.R;
 import com.hunterit.dmcl.model.Product;
 import com.hunterit.dmcl.util.NumberTextWatcherForThousand;
+import com.hunterit.dmcl.view.activity.ChiTietSPActivity;
 
 import java.util.List;
 
@@ -40,6 +42,14 @@ public class ItemProductAdapter extends RecyclerView.Adapter<ItemProductAdapter.
         holder.txtvNameProduct.setText(pro.getName());
         holder.txtvPrice.setText(NumberTextWatcherForThousand.getDecimalFormattedString(String.valueOf(pro.getPrice())) + "đ");
         holder.txtvPriceDel.setText(NumberTextWatcherForThousand.getDecimalFormattedString(String.valueOf(pro.getPriceDel())) + "đ");
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, ChiTietSPActivity.class);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

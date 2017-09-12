@@ -16,6 +16,8 @@ import com.facebook.FacebookSdk;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.hunterit.dmcl.R;
+import com.hunterit.dmcl.view.activity.LoginActivity;
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -36,6 +38,8 @@ public class LoginFragment extends Fragment {
         // Inflate the layout for this fragment
         FacebookSdk.sdkInitialize(this.getContext());
         View view = inflater.inflate(R.layout.fragment_login, container, false);
+
+        ((LoginActivity)getActivity()).getToolbar().setVisibility(View.VISIBLE);
 
         btnLoginFace = view.findViewById(R.id.btnLoginFace);
         btnLoginFace.setReadPermissions("email");

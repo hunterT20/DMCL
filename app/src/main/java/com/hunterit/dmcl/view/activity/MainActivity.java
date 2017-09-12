@@ -1,5 +1,6 @@
 package com.hunterit.dmcl.view.activity;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
@@ -15,6 +16,7 @@ import android.view.MenuItem;
 
 import com.hunterit.dmcl.R;
 import com.hunterit.dmcl.view.fragment.IndexFragment;
+import com.hunterit.dmcl.view.fragment.IntroLoginFragment;
 import com.hunterit.dmcl.view.fragment.LoginFragment;
 
 public class MainActivity extends AppCompatActivity
@@ -86,7 +88,8 @@ public class MainActivity extends AppCompatActivity
                     callFragment(new IndexFragment());
                     return true;
                 case R.id.navigation_taikhoan:
-                    callFragment(new LoginFragment());
+                    Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+                    startActivity(intent);
                     return true;
             }
             return false;

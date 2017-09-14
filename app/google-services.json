@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "792158784927-0eg1qts93dg2fcdqemi3vqc1vr2g6gnc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hunterit.dmcl",
+            "certificate_hash": "6c274eeeceda15dcd984839b09673b2cd01c2210"
+          }
+        },
+        {
           "client_id": "792158784927-mr009rom6sh60acobo6q77097ho45bjv.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

@@ -8,7 +8,7 @@ import android.support.v7.widget.Toolbar;
 
 import com.hunterit.dmcl.R;
 import com.hunterit.dmcl.view.fragment.DanhGiaFragment;
-import com.hunterit.dmcl.view.fragment.GioThieuSPFragment;
+import com.hunterit.dmcl.view.fragment.GioiThieuSPFragment;
 import com.hunterit.dmcl.view.fragment.ThongTinKTFragment;
 import com.hunterit.dmcl.view.adapter.ViewPagerAdapter;
 import com.hunterit.dmcl.view.fragment.TongQuanFragment;
@@ -41,7 +41,7 @@ public class ChiTietSPActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new TongQuanFragment(), "Tổng quan");
-        adapter.addFragment(new GioThieuSPFragment(), "Về sản phẩm");
+        adapter.addFragment(new GioiThieuSPFragment(), "Về sản phẩm");
         adapter.addFragment(new ThongTinKTFragment(), "Thông số kĩ thuật");
         adapter.addFragment(new DanhGiaFragment(), "Đánh giá");
         viewPager.setAdapter(adapter);

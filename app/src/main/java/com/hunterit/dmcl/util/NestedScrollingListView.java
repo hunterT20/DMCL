@@ -1,4 +1,4 @@
-package com.hunterit.dmcl.view.adapter;
+package com.hunterit.dmcl.util;
 
 import android.annotation.TargetApi;
 import android.content.Context;

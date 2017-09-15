@@ -7,15 +7,10 @@
         android:id="@+id/txtvTitleThongSo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
         android:background="#e6dfdf"
         android:padding="5dp"
         android:text="Tổng quan"
         android:textSize="18sp"
         android:textStyle="bold" />
 
-    <ListView
-        android:id="@+id/lvThongSo"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 </LinearLayout>

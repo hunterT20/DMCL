@@ -7,7 +7,7 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <com.hunterit.dmcl.view.adapter.NestedScrollingListView
+    <com.hunterit.dmcl.util.NestedScrollingListView
         android:id="@+id/lvIndex"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

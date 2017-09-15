@@ -1,66 +1,99 @@
 package com.hunterit.dmcl.view.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.ListView;
+import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
 
 import com.hunterit.dmcl.R;
+import com.hunterit.dmcl.model.ItemThongSo;
 import com.hunterit.dmcl.model.ItemThongTinKyThuat;
 
 import java.util.List;
 
-public class ThongSoKyThuatAdapter extends BaseAdapter {
+public class ThongSoKyThuatAdapter extends BaseExpandableListAdapter {
     private Context context;
-    private LayoutInflater layout;
-    private List<ItemThongTinKyThuat> itemThongSos;
+    private List<ItemThongTinKyThuat> thongTinKyThuats;
 
-    public ThongSoKyThuatAdapter(Context context, List<ItemThongTinKyThuat> itemThongSos) {
+    public ThongSoKyThuatAdapter(Context context, List<ItemThongTinKyThuat> thongTinKyThuats) {
         this.context = context;
-        this.itemThongSos = itemThongSos;
-        this.layout = LayoutInflater.from(context);
+        this.thongTinKyThuats = thongTinKyThuats;
     }
 
     @Override
-    public int getCount() {
-        return itemThongSos.size();
+    public int getGroupCount() {
+        return thongTinKyThuats.size();
     }
 
     @Override
-    public Object getItem(int i) {
-        return itemThongSos.get(i);
+    public int getChildrenCount(int i) {
+        return thongTinKyThuats.get(i).getItemThongSoList().size();
     }
 
     @Override
-    public long getItemId(int i) {
+    public Object getGroup(int i) {
+        return thongTinKyThuats.get(i);
+    }
+
+    @Override
+    public Object getChild(int i, int i1) {
+        return thongTinKyThuats.get(i).getItemThongSoList().get(i1);
+    }
+
+    @Override
+    public long getGroupId(int i) {
         return i;
     }
 
     @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
-        ViewHolder holder;
-        if (view == null) {
-            view = layout.inflate(R.layout.item_thongtin_kythuat, null);
-            holder = new ViewHolder();
-            holder.txtvTitleThongSo = view.findViewById(R.id.txtvTitleThongSo);
-            holder.lvThongSo = view.findViewById(R.id.lvThongSo);
-            view.setTag(holder);
-        } else {
-            holder = (ViewHolder) view.getTag();
-        }
-        ItemThongTinKyThuat itemThongSo = itemThongSos.get(i);
+    public long getChildId(int i, int i1) {
+        return i1;
+    }
 
-        holder.txtvTitleThongSo.setText(itemThongSo.getTitleThongSoKyThuat());
-        ThongSoAdapter adapter = new ThongSoAdapter(context,itemThongSo.getItemThongSoList());
-        holder.lvThongSo.setAdapter(adapter);
+    @Override
+    public boolean hasStableIds() {
+        return false;
+    }
+
+    @SuppressLint("SetTextI18n")
+    @Override
+    public View getGroupView(int i, boolean b, View view, ViewGroup viewGroup) {
+        ItemThongTinKyThuat itemThongTinKyThuat = thongTinKyThuats.get(i);
+        if (view == null) {
+            LayoutInflater infalInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            view = infalInflater.inflate(R.layout.item_thongtin_kythuat, null);
+        }
+
+        TextView txtvTitleThongSO = view.findViewById(R.id.txtvTitleThongSo);
+
+        txtvTitleThongSO.setText(itemThongTinKyThuat.getTitleThongSoKyThuat());
+
         return view;
     }
 
-    private class ViewHolder{
-        TextView txtvTitleThongSo;
-        ListView lvThongSo;
+    @SuppressLint("SetTextI18n")
+    @Override
+    public View getChildView(int i, int i1, boolean b, View view, ViewGroup viewGroup) {
+        ItemThongSo itemKM = (ItemThongSo) getChild(i,i1);
+        if (view == null) {
+            LayoutInflater infalInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            view = infalInflater.inflate(R.layout.item_thongso, null);
+        }
+
+        TextView txtvNameThongSO = view.findViewById(R.id.txtvNameThongSO);
+        TextView txtvValueThongSo = view.findViewById(R.id.txtvValueThongSo);
+
+        txtvNameThongSO.setText(itemKM.getTitle());
+        txtvValueThongSo.setText(itemKM.getThongSo());
+
+        return view;
+    }
+
+    @Override
+    public boolean isChildSelectable(int i, int i1) {
+        return false;
     }
 }

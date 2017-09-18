@@ -59,7 +59,9 @@
 
                     <android.support.constraint.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:paddingLeft="3dp"
+                        android:paddingRight="5dp">
 
                         <TextView
                             android:id="@+id/txtvLogo"

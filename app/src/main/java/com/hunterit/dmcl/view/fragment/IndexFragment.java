@@ -78,13 +78,10 @@ public class IndexFragment extends Fragment {
 
         List<Product> productList = new ArrayList<>();
         Product product = new Product("Smart Tivi LED SAMSUNG 43 Inch UA43K5300AKXXV",36000000,3400000);
-        Product product1 = new Product("Smart Tivi LED SAMSUNG 43 Inch UA43K5300AKXXV",36000000,3400000);
-        Product product2 = new Product("Smart Tivi LED SAMSUNG 43 Inch UA43K5300AKXXV",36000000,3400000);
-        Product product3 = new Product("Smart Tivi LED SAMSUNG 43 Inch UA43K5300AKXXV",36000000,3400000);
         productList.add(product);
-        productList.add(product1);
-        productList.add(product2);
-        productList.add(product3);
+        productList.add(product);
+        productList.add(product);
+        productList.add(product);
 
         List<ItemIndex> list = new ArrayList<>();
         ItemIndex itemIndex1 = new ItemIndex("Khuyến mãi",productList);

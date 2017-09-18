@@ -5,6 +5,9 @@ import android.util.AttributeSet;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
 
+/**
+ * NonScrollExpandableListView là ExpandableListView không thực hiện chức năng Scroll
+ */
 public class NonScrollExpandableListView extends ExpandableListView {
 
     public NonScrollExpandableListView(Context context) {

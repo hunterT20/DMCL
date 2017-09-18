@@ -6,6 +6,9 @@ import android.os.Build;
 import android.util.AttributeSet;
 import android.widget.ListView;
 
+/**
+ * NestedScrollingListView: Listview dạng NestedScroll để thực hiện chức năng hình ảnh toolbar
+ */
 public class NestedScrollingListView extends ListView{
     public NestedScrollingListView(Context context) {
         super(context);
